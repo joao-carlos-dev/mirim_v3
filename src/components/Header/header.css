@@ -1,0 +1,104 @@
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Altura padrão mais confortável */
+  background-color: var(--backgroundColor);
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cabecalho.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.logo img {
+  width: 45px;
+  display: block;
+}
+
+/* Navegação Desktop */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--colorFont);
+  transition: all 0.2s;
+}
+
+nav ul li a:hover {
+  text-shadow: var(--shadowFont);
+  color: #007bff;
+}
+
+/* Botão Menu Hambúrguer (Escondido no Desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--colorFont);
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* =========================================
+   RESPONSIVO (MOBILE)
+   ========================================= */
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: flex; /* Mostra o botão no mobile */
+  }
+
+  .navegacao {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--backgroundColor);
+    height: 0; /* Começa fechado */
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+  }
+
+  /* Quando o menu está ativo, ele expande */
+  .navegacao.active {
+    height: 200px; 
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  /* Animação do botão X (opcional, mas profissional) */
+  .cabecalho.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .cabecalho.open .bar:nth-child(2) { opacity: 0; }
+  .cabecalho.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}

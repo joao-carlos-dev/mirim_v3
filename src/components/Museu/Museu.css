@@ -1,0 +1,149 @@
+.museu-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  background-color: var(--backgroundColor);
+}
+
+.museu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.museu-header span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--colorFontYellow);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.museu-header h2 {
+  font-size: 2.5rem;
+  color: var(--colorFontYellow);
+  margin-bottom: 8px;
+  font-family: var(--font);
+  text-align: center;
+}
+
+/* Grid de Tópicos */
+.museu-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.topic-card {
+  padding: 30px;
+  background: #fcfcfc;
+  border: 2px solid var(--colorFontYellow);
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.topic-card:hover {
+  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.1);
+}
+
+.topic-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.topic-btn {
+  margin-top: 15px;
+  background: none;
+  border: 1px solid var(--colorFontYellow);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.topic-card:hover .topic-btn {
+  background: var(--colorFontGreen);
+  color: #fff;
+  border-color: var(--colorFontYellow);
+}
+
+/* Notícias Relacionadas */
+.museu-related-news {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.mini-news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mini-news-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.mini-news-item img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Tablets e Telas Médias */
+@media (max-width: 992px) {
+  .museu-container {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+}
+
+/* Celulares Grandes (iPhone Pro Max, etc) */
+@media (max-width: 768px) {
+  .museu-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .mini-news-list {
+    grid-template-columns: 1fr; /* Notícias empilham uma embaixo da outra */
+  }
+
+  .museu-topics-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas de ícones no celular */
+    gap: 15px;
+  }
+}
+
+/* Celulares Pequenos */
+@media (max-width: 480px) {
+  .museu-container {
+    margin: 20px 10px;
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .museu-topics-grid {
+    grid-template-columns: 1fr; /* 1 coluna de ícones para não apertar o texto */
+  }
+
+  .mini-news-item {
+    flex-direction: column; /* Imagem em cima, texto embaixo no mini-card */
+    text-align: center;
+  }
+
+  .mini-news-item img {
+    width: 100%;
+    height: 120px;
+  }
+}
