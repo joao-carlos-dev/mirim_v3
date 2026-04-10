@@ -1,0 +1,36 @@
+.pagina-container {
+  max-width: 900px;
+  margin: 120px auto 60px; /* Margem para o Header fixo */
+  padding: 0 20px;
+  min-height: 70vh;
+}
+
+.pagina-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.btn-voltar {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.pagina-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.pagina-conteudo {
+  line-height: 1.8;
+  color: #333;
+}

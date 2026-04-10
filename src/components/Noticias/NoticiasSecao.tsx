@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import React, { useState } from "react";
 import "./NoticiasSecao.css";
 // import type { NewsItem } from "../../Data/types/Noticias";
@@ -55,9 +57,9 @@ const NewsSection: React.FC = () => {
                 <div className="content-container">
                   <h4>{item.title}</h4>
                   <p>{item.summary}</p>
-                  <a href={item.link} className="link-action">
+                  <Link to={`/noticia/${item.id}`} className="link-action">
                     Ler mais →
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}

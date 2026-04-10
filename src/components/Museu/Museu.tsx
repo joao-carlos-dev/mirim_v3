@@ -1,15 +1,16 @@
 import React from "react";
 import "./Museu.css";
+import { Link } from 'react-router-dom';
 // import { mockNews } from "../../Data/types/Mock"; // Importando o mesmo array
 
 const MuseuSecao: React.FC = () => {
 
   const topicos = [
-    { id: 1, title: "Acervo", icon: "🖼️", desc: "Conheça nossas peças." },
-    { id: 2, title: "Agendamento", icon: "📅", desc: "Reserve sua visita." },
-    { id: 3, title: "Ambientes", icon: "🏛️", desc: "Explore nossas salas." },
-    { id: 4, title: "História", icon: "📜", desc: "Nossa trajetória." },
-    { id: 5, title: "Eventos", icon: "📜", desc: "Nossos Eventos." },
+    { id: 1, title: "Acervo", icon: "🖼️", desc: "Conheça nossas peças.", path: "/museu/acervo" },
+    { id: 2, title: "Agendamento", icon: "📅", desc: "Reserve sua visita.", path: "/museu/agendamento" },
+    { id: 3, title: "Ambientes", icon: "🏛️", desc: "Explore nossas salas.", path: "/museu/ambiente" },
+    { id: 4, title: "História", icon: "📜", desc: "Nossa trajetória.", path: "/museu/historia" },
+    { id: 5, title: "Eventos", icon: "📜", desc: "Nossos Eventos.", path: "/museu/eventos" },
   ];
 
   return (
@@ -26,7 +27,7 @@ const MuseuSecao: React.FC = () => {
             <span className="topic-icon">{topico.icon}</span>
             <h3>{topico.title}</h3>
             <p>{topico.desc}</p>
-            <button className="topic-btn">Explorar</button>
+            <Link to={topico.path} className="topic-btn">Explorar</Link>
           </div>
         ))}
       </div>

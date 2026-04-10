@@ -5,6 +5,8 @@ export interface NewsItem {
   summary: string;
   category: "Cultura" | "Eventos" | "Museu";
   date: string;
-  imageUrl: string;
+  imageUrl: string; // capa
+  images?: string[];
   link: string;
+  content?: string;
 }

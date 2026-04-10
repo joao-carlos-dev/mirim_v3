@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Associacao.css";
 import { mockNews } from "../../Data/types/Mock";
+
+
 
 const AssociacaoSecao: React.FC = () => {
   // Filtro para Eventos Culturais da Associação
@@ -25,7 +29,7 @@ const AssociacaoSecao: React.FC = () => {
           <div className="card-icon">🤝</div>
           <h3>Sobre a Associação</h3>
           <p>Conheça nossa missão, história e como trabalhamos pelo bairro desde a nossa fundação.</p>
-          <button className="secondary-btn">Nossa História</button>
+          <Link to="/associacao/sobre" className="secondary-btn">Nossa História</Link>
         </div>
 
         {/* Card Membros */}
@@ -33,7 +37,7 @@ const AssociacaoSecao: React.FC = () => {
           <div className="card-icon">👥</div>
           <h3>Membros e Diretoria</h3>
           <p>Conheça as pessoas que dedicam seu tempo para a gestão e melhoria da nossa Freguesia.</p>
-          <button className="secondary-btn">Ver Diretoria</button>
+          <Link to="/associacao/diretoria" className="secondary-btn">Ver Diretoria</Link>
         </div>
 
         {/* Card Mirim (O Território) */}
@@ -41,7 +45,7 @@ const AssociacaoSecao: React.FC = () => {
           <div className="card-icon">📍</div>
           <h3>Conheça Mirim</h3>
           <p>Informações geográficas, turísticas e curiosidades sobre o nosso pedaço de paraíso.</p>
-          <button className="secondary-btn">Explorar Bairro</button>
+          <Link to="/associacao/bairro" className="secondary-btn">Explorar Bairro</Link>
         </div>
       </div>
 
