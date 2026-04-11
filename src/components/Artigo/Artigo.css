@@ -30,22 +30,23 @@
 
 /* CUSTOMIZAÇÃO DAS CORES DO SWIPER (Para combinar com seu site) */
 :root {
-  --swiper-theme-color: #007bff; /* Cor dos pontinhos e setas */
-  --swiper-navigation-size: 25px; /* Tamanho das setas */
+  --swiper-theme-color: var(--colorFontYellow); /* Cor dos pontinhos e setas */
+  --swiper-navigation-size: 15px; /* Tamanho das setas */
+  --swiper-navigation-size: z-index: 2;
 }
 
 /* Deixar as setas mais visíveis sobre as fotos */
 .swiper-button-next, .swiper-button-prev {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 30px 20px;
+  background-color: var(--colorFontGreen); 
+  padding: 10px 10px;
   border-radius: 5px;
-  color: #333 !important;
+  color: var(--colorFontYellow);
 }
 
 .back-link {
   display: inline-block;
   margin-bottom: 20px;
-  color: #007bff;
+  color: var(--colorFontGreen);
   text-decoration: none;
   font-weight: 600;
 }
@@ -55,12 +56,12 @@
   gap: 15px;
   margin-bottom: 15px;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--colorFontYellow);
 }
 
 .categoria {
   background: #e7f1ff;
-  color: #007bff;
+  color: var(--colorFontGreen);
   padding: 2px 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -69,7 +70,7 @@
 .artigo-header h1 {
   font-size: 2.8rem;
   line-height: 1.2;
-  color: #1a1a1a;
+  color: var(--colorFontGreen);
   margin-bottom: 20px;
 }
 
@@ -77,7 +78,7 @@
   font-size: 1.2rem;
   color: #555;
   line-height: 1.6;
-  border-left: 4px solid #eee;
+  border-left: 4px solid var(--colorFontYellow);
   padding-left: 20px;
   margin-bottom: 40px;
 }
@@ -97,7 +98,7 @@
 .artigo-content p {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #333;
+  color: var(--colorFontGreen);
   margin-bottom: 25px;
 }
 

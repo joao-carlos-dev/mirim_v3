@@ -67,11 +67,13 @@
 .secondary-btn {
   background: #f8f9fa;
   border: 2px solid var(--colorFontYellow);
+  color: var(--colorFontGreen);
   padding: 10px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .secondary-btn:hover {

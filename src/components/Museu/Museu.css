@@ -30,7 +30,7 @@
 .museu-topics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
+  gap: 30px;
   margin-bottom: 50px;
 }
 
@@ -41,6 +41,11 @@
   border-radius: 15px;
   text-align: center;
   transition: all 0.3s ease;
+}
+
+.topic-card p {
+  font-size: 12px;
+  padding-bottom: 6px;
 }
 
 .topic-card:hover {
@@ -59,11 +64,13 @@
   margin-top: 15px;
   background: none;
   border: 1px solid var(--colorFontYellow);
+  color: var(--colorFontGreen);
   padding: 8px 20px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.8rem;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .topic-card:hover .topic-btn {
