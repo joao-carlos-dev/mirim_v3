@@ -3,7 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import 'swiper/swiper.css';
+// Corrigido: Caminho padrão do Swiper nas versões atuais
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -11,12 +12,10 @@ import { mockNews } from "../../Data/types/Mock";
 import "./Artigo.css";
 
 const Artigo: React.FC = () => {
-  const { id } = useParams(); // Pega o ID da URL
+  const { id } = useParams();
 
-  // Procura a notícia no Mock pelo ID
   const noticia = mockNews.find((item) => item.id === Number(id));
 
-  // Scroll para o topo sempre que abrir uma matéria
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -47,15 +46,14 @@ const Artigo: React.FC = () => {
 
       <div className="artigo-media-wrapper">
         {temVariasFotos ? (
-          // CENÁRIO A: MAIS DE UMA FOTO -> CARROSSEL
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={0}
             slidesPerView={1}
-            navigation={true} // Setas
-            pagination={{ clickable: true }} // Pontinhos
-            autoplay={{ delay: 5000, disableOnInteraction: false }} // Auto-play opcional
-            loop={true} // Infinito
+            navigation={true}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            loop={true}
             className="artigo-carousel"
           >
             {todasAsFotos.map((foto, index) => (
@@ -68,26 +66,32 @@ const Artigo: React.FC = () => {
             ))}
           </Swiper>
         ) : (
-          // CENÁRIO B: APENAS UMA FOTO -> BANNER ESTÁTICO
           <figure className="artigo-banner-unico">
             <img src={noticia.imageUrl} alt={noticia.title} />
           </figure>
         )}
       </div>
-      {/* <div className={`galeria-dinamica qtd-${todasAsFotos.length}`}>
-        {todasAsFotos.map((foto, index) => (
-          <div key={index} className="foto-item">
-            <img src={foto} alt={`Imagem ${index + 1} da matéria`} loading="lazy" />
-          </div>
-        ))}
-      </div> */}
-      {/* <figure className="artigo-banner">
-        <img src={noticia.imageUrl} alt={noticia.title} />
-      </figure> */}
 
       <div className="artigo-content">
-        {/* Aqui você pode simular o texto completo da matéria */}
-        {noticia.content}.
+        {/* Renderiza o texto principal da matéria */}
+        <p className="texto-principal">
+          {noticia.content?.text}
+        </p>
+
+        {/* Renderiza a Agenda/Cronograma apenas se ela existir no Mock */}
+        {noticia.content?.agenda && (
+          <div className="agenda-secao">
+            <h3>Cronograma do Evento</h3>
+            <div className="agenda-timeline">
+              {noticia.content?.agenda.map((item, index) => (
+                <div key={index} className="agenda-card">
+                  <div className="agenda-hora">{item.hora}</div>
+                  <div className="agenda-info">{item.atividade}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </article>
   );

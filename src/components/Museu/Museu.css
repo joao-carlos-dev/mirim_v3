@@ -1,5 +1,5 @@
 .museu-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
   padding: 40px;
   background-color: var(--backgroundColor);

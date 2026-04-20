@@ -1,6 +1,6 @@
 /* Container Principal */
 .news-tabs-section {
-  max-width: 1200px;
+  /* width: 1200px; */
   margin: auto;
   padding: 0 20px;
   background-color: var(--backgroundColorLighr);

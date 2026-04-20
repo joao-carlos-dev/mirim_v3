@@ -31,22 +31,6 @@ const MuseuSecao: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* Notícias do Museu (Cross-posting automático)
-      <div className="museu-related-news">
-        <h3>Novidades do Museu</h3>
-        <div className="mini-news-list">
-          {museumNews.slice(0, 2).map((news) => (
-            <div key={news.id} className="mini-news-item">
-              <img src={news.imageUrl} alt={news.title} />
-              <div>
-                <h4>{news.title}</h4>
-                <a href={news.link}>Ver detalhes</a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 };

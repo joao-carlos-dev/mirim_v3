@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
             querido bairro em Imbituba/SC.
           </p>
           <div className="social-icons">
-            <a href="#" aria-label="Instagram">📸</a>
-            <a href="#" aria-label="Facebook">👥</a>
+            <a href="https://www.instagram.com/museudafreguesiademirim" aria-label="Instagram" target="_blank">📸</a>
+            <a href="https://www.facebook.com/museudafreguesiademirim/?_rdr" aria-label="Facebook" target="_blank">👥</a>
           </div>
         </div>
 
@@ -27,16 +27,16 @@ const Footer: React.FC = () => {
             <li><a href="#noticia">Notícias</a></li>
             <li><a href="#museu">Museu</a></li>
             <li><a href="#associacao">Associação</a></li>
-            <li><a href="#contato">Fale Conosco</a></li>
+            <li><a href="https://web.whatsapp.com/send?phone=5548996259998" target="_blank">Fale Conosco</a></li>
           </ul>
         </div>
 
         {/* Coluna 3: Contato e Localização */}
         <div className="footer-section contact">
           <h4>Onde Estamos</h4>
-          <p>📍 Estrada Geral do Mirim, S/N</p>
+          <p>📍 Rua Centenário, 65</p>
           <p>Imbituba - SC, 88780-000</p>
-          <p>📧 contato@freguesiademirim.org</p>
+          <p>📧 freguesiademirim@gmail.com</p>
         </div>
       </div>
 

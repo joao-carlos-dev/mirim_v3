@@ -1,7 +1,8 @@
 .artigo-container {
-  max-width: 800px; /* Largura ideal para leitura */
-  margin: 120px auto 60px; /* 120px para não ficar embaixo do header fixo */
+  max-width: 800px; 
+  margin: 120px auto 60px; 
   padding: 0 20px;
+  text-align: justify;
   /* animation: fadeIn 0.5s ease; */
 }
 
@@ -22,25 +23,48 @@
   height: 100%;
 }
 
+.artigo-carousel .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px; /* Espaço para a foto "respirar" */
+}
+
 .artigo-carousel .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Importante para fotos de tamanhos variados */
+  max-width: 100%;
+  max-height: 75vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 8px;
 }
 
 /* CUSTOMIZAÇÃO DAS CORES DO SWIPER (Para combinar com seu site) */
 :root {
   --swiper-theme-color: var(--colorFontYellow); /* Cor dos pontinhos e setas */
-  --swiper-navigation-size: 15px; /* Tamanho das setas */
-  --swiper-navigation-size: z-index: 2;
+  --swiper-navigation-size: 20px; /* Tamanho das setas */
+  /* --swiper-navigation-size: z-index: 2; */
 }
 
 /* Deixar as setas mais visíveis sobre as fotos */
-.swiper-button-next, .swiper-button-prev {
+/* .swiper-button-next, .swiper-button-prev {
   background-color: var(--colorFontGreen); 
   padding: 10px 10px;
   border-radius: 5px;
   color: var(--colorFontYellow);
+} */
+
+.swiper-button-next, .swiper-button-prev {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  color: var(--colorFontGreen) !important;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
 }
 
 .back-link {
@@ -159,6 +183,58 @@
   grid-column: 2;
   grid-row: span 1;
 }
+
+.agenda-secao {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+
+.agenda-secao h3 {
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.agenda-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agenda-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--colorFontGreen); 
+}
+
+.agenda-hora {
+  font-weight: bold;
+  color: var(--colorFontGreen);
+  min-width: 80px;
+  font-size: 1rem;
+}
+
+.agenda-info {
+  color: #444;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+ .artigo-media-wrapper {
+    width: 100%;
+    height: 500px;
+    margin: 30px 0 40px;
+    background-color: transparent; /* Removemos o fundo cinza que 'prende' a foto */
+    display: block;
+    overflow: hidden;
+    border-radius: 15px;
+  }
 /* Responsividade */
 @media (max-width: 768px) {
   .artigo-header h1 {
@@ -195,13 +271,39 @@
   }
 
   /* Ajuste crucial de altura no mobile */
-  .artigo-media-wrapper {
-    height: 300px; /* Reduzimos a altura para não ocupar a tela toda */
-    margin-bottom: 25px;
-  }
+
+   .artigo-media-wrapper {
+    width: 100%;
+    height: 350px; /* Altura fixa para estabilidade */
+    border-radius: 15px;
+    margin-bottom: 40px;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+
+  .artigo-media-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+  /* O pulo do gato: mostra a imagem toda sem cortar */
+    object-fit: contain; 
+  /* Garante que a imagem não fique embaçada ao redimensionar */
+    image-rendering: auto; 
+}
 
   /* Esconder setas no mobile (melhor navegação por swipe) */
   .swiper-button-next, .swiper-button-prev {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .agenda-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .agenda-hora {
+    margin-bottom: 5px;
   }
 }

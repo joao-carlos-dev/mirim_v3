@@ -9,6 +9,7 @@ import MuseuHistoriaPage from "./pages/Museu/MuseuHistoriaPage";
 import AgendamentoPage from "./pages/Museu/AgendamentoPage";
 import SobrePage from "./pages/Associacao/SobrePage";
 import MembrosPage from "./pages/Associacao/MembrosPage";
+import BairroHubPage from "./components/Associacao/BairroHubPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
 
         <Route path="/associacao/sobre" element={<SobrePage />} />
         <Route path="/associacao/membros" element={<MembrosPage />} />
+        <Route path="/conheca-mirim" element={<BairroHubPage />} />
       </Routes>
       
       <Footer />
