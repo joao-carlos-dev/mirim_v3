@@ -22,7 +22,7 @@ function App() {
 
         <Route path="/museu/acervo" element={<AcervoPage />} />
         <Route path="/museu/historia" element={<MuseuHistoriaPage />} />
-        <Route path="/museu/agendameno" element={<AgendamentoPage />} />
+        <Route path="/museu/agendamento" element={<AgendamentoPage />} />
 
         <Route path="/associacao/sobre" element={<SobrePage />} />
         <Route path="/associacao/membros" element={<MembrosPage />} />

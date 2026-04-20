@@ -1,16 +1,42 @@
 import React from "react";
 import "./Museu.css";
 import { Link } from 'react-router-dom';
-// import { mockNews } from "../../Data/types/Mock"; // Importando o mesmo array
+import { mockNews } from "../../Data/types/Mock";
 
 const MuseuSecao: React.FC = () => {
+  // Buscamos os dados filtrando pela categoria "Museu" e palavras-chave no título
+  const getMateria = (termo: string) => 
+    mockNews.find(n => n.category === "Museu" && n.title.toLowerCase().includes(termo.toLowerCase()));
+
+  const materiaAcervo = getMateria("Acervo");
+  const materiaAmbientes = getMateria("Ambiente");
+  const materiaHistoria = getMateria("História");
 
   const topicos = [
-    { id: 1, title: "Acervo", icon: "🖼️", desc: "Conheça nossas peças.", path: "/museu/acervo" },
-    { id: 2, title: "Agendamento", icon: "📅", desc: "Reserve sua visita.", path: "/museu/agendamento" },
-    { id: 3, title: "Ambientes", icon: "🏛️", desc: "Explore nossas salas.", path: "/museu/ambiente" },
-    { id: 4, title: "História", icon: "📜", desc: "Nossa trajetória.", path: "/museu/historia" },
-    { id: 5, title: "Eventos", icon: "📜", desc: "Nossos Eventos.", path: "/museu/eventos" },
+    { 
+      title: "Acervo", 
+      icon: "🖼️", 
+      desc: materiaAcervo?.summary || "Conheça nossas peças.", 
+      path: materiaAcervo ? `/noticia/${materiaAcervo.id}` : "#" 
+    },
+    { 
+      title: "Agendamento", 
+      icon: "📅", 
+      desc: "Reserve sua visita por telefone ou e-mail.", 
+      path: "/museu/agendamento" 
+    },
+    { 
+      title: "Ambientes", 
+      icon: "🏛️", 
+      desc: materiaAmbientes?.summary || "Explore nossas salas.", 
+      path: materiaAmbientes ? `/noticia/${materiaAmbientes.id}` : "#" 
+    },
+    { 
+      title: "História", 
+      icon: "📜", 
+      desc: materiaHistoria?.summary || "Nossa trajetória.", 
+      path: materiaHistoria ? `/noticia/${materiaHistoria.id}` : "#" 
+    }
   ];
 
   return (
@@ -20,10 +46,9 @@ const MuseuSecao: React.FC = () => {
         <h2>Museu da Freguesia</h2>
       </div>
 
-      {/* Grid de Tópicos - Navegação Fluida */}
       <div className="museu-topics-grid">
-        {topicos.map((topico) => (
-          <div key={topico.id} className="topic-card">
+        {topicos.map((topico, index) => (
+          <div key={index} className="topic-card">
             <span className="topic-icon">{topico.icon}</span>
             <h3>{topico.title}</h3>
             <p>{topico.desc}</p>

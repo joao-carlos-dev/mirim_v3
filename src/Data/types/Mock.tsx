@@ -110,18 +110,53 @@ export const mockNews: NewsItem[] = [
     },
     lenght: 0
   },
+
   {
     id: 7,
-    title: "Participação no 18º AÇOR em Sombrio",
-    summary: "Representação da cultura imbitubense através de danças folclóricas e artesanato típico açoriano.",
-    category: "Eventos",
-    date: "05/10/2023",
-    imageUrl: "/img/festa-acor.jpg",
-    link: "/noticia/7",
+    title: "História do Museu",
+    summary: "O edifício que abrigou a primeira escola de Mirim hoje preserva a nossa memória.",
+    category: "Museu",
     isArchived: true,
+    imageUrl: "https://res.cloudinary.com/dcz03mmti/image/upload/v1776635531/foto_materia_02_p4v5nz.jpg",
     content: {
-      text: "A Diretoria de Cultura participou do evento com exposições baseadas na cultura açoriana, incluindo o Culto ao Divino Espírito Santo e artesanatos confeccionados pela Assiart. O evento reuniu entidades ligadas ao Núcleo de Estudos Açorianos (NEA/UFSC)."
+      text: "O Museu da Freguesia de Mirim está sediado num edifício de grande valor histórico, tendo abrigado a primeira escola do município na época em que o território ainda pertencia a Laguna. Este património foi revitalizado para servir como um espaço de memória dedicado a reavivar a história local e a incentivar a valorização da identidade cultural da comunidade."
     },
-    lenght: 0
-  }
+    lenght: 0,
+    date: "",
+    link: ""
+  },
+
+   {
+    id: 8,
+    title: "Acervo Histórico",
+    summary: "História contada através dos objetos",
+    category: "Museu",
+    isArchived: true,
+    imageUrl: "https://res.cloudinary.com/dcz03mmti/image/upload/v1776725595/museu.02_zim40l.jpg",
+    images: ["https://res.cloudinary.com/dcz03mmti/image/upload/v1776725596/museu.04_yxe8xi.jpg",
+      "https://res.cloudinary.com/dcz03mmti/image/upload/v1776725595/museu.01_yuyc3l.jpg",
+      "https://res.cloudinary.com/dcz03mmti/image/upload/v1776725595/museu.03_xpar4l.jpg"
+    ],
+    content: {
+      text: "O nosso acervo celebra a herança luso-açoriana, com foco especial nos elementos do Culto ao Divino Espírito Santo, como a Bandeira e a Coroa do Divino. A coleção inclui ainda trajes históricos da Corte Imperial, mobiliário típico, a reconstituição de um quarto açoriano, o tradicional fogão a lenha e diversos artesanatos confeccionados pela associação Assiart."
+    },
+    lenght: 0,
+    date: "",
+    link: ""
+  },
+  {
+    id: 9,
+    title: "Nosso ambiente",
+    summary: "Cada espaço, uma história",
+    category: "Museu",
+    isArchived: true,
+    imageUrl: "https://res.cloudinary.com/dcz03mmti/image/upload/v1776725795/frente_museo_jsauwl.png",
+    content: {
+      text: "O edifício foi totalmente reformado para oferecer salas adequadas a exposições artísticas e ações culturais voltadas para a comunidade. O complexo destaca-se por integrar a histórica sede dos Correios do bairro Mirim, funcionando como um ponto de encontro que une a preservação do passado à vida cultural ativa do distrito."
+    },
+    lenght: 0,
+    date: "",
+    link: ""
+  },
+
 ];

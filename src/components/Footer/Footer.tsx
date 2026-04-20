@@ -1,5 +1,8 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
+
 import "./Footer.css";
+
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,9 +27,9 @@ const Footer: React.FC = () => {
         <div className="footer-section links">
           <h4>Navegação</h4>
           <ul>
-            <li><a href="#noticia">Notícias</a></li>
-            <li><a href="#museu">Museu</a></li>
-            <li><a href="#associacao">Associação</a></li>
+            <li><HashLink smooth to="/#noticia" onClick={() => window.location.href}>Notícias</HashLink></li>
+            <li><HashLink smooth to="/#museu" onClick={() => window.location.href}>Museu</HashLink></li>
+            <li><HashLink smooth to="/#associacao" onClick={() => window.location.href}>Associação</HashLink></li>
             <li><a href="https://web.whatsapp.com/send?phone=5548996259998" target="_blank">Fale Conosco</a></li>
           </ul>
         </div>

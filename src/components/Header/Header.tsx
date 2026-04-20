@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { HashLink } from "react-router-hash-link";
 
 import "./header.css";
 import logo from "../../assets/icon/logo_freguesia.png";
@@ -41,9 +42,9 @@ const Header = () => {
 
       <nav className={`navegacao ${menuOpen ? "active" : ""}`}>
         <ul>
-          <li><a href="#noticia" onClick={() => setMenuOpen(false)}>Notícias</a></li>
-          <li><a href="#museu" onClick={() => setMenuOpen(false)}>Museu da Freguesia</a></li>
-          <li><a href="#associacao" onClick={() => setMenuOpen(false)}>Assoc. de Mirim</a></li>
+          <li><HashLink smooth to="/#noticia" onClick={() => setMenuOpen(false)}>Notícias</HashLink></li>
+          <li><HashLink smooth to="/#museu" onClick={() => setMenuOpen(false)}>Museu da Freguesia</HashLink></li>
+          <li><HashLink smooth to="/#associacao" onClick={() => setMenuOpen(false)}>Assoc. de Mirim</HashLink></li>
         </ul>
       </nav>
     </header>

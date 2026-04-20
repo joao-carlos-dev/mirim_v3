@@ -62,7 +62,7 @@ const AssociacaoSecao: React.FC = () => {
         <div className="cultural-events-feed">
           <div className="feed-header">
             <h3>Próximos Eventos Culturais</h3>
-            <Link to="/eventos">Calendário Completo</Link>
+            {/* <Link to="/eventos">Calendário Completo</Link> */}
           </div>
           
           <div className="events-list">
