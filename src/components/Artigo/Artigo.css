@@ -124,6 +124,7 @@
   line-height: 1.8;
   color: var(--colorFontGreen);
   margin-bottom: 25px;
+  white-space: pre-line;
 }
 
 .galeria-dinamica {

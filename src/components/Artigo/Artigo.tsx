@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 import { mockNews } from "../../Data/types/Mock";
 import "./Artigo.css";
+import { Helmet } from "react-helmet-async";
 
 const Artigo: React.FC = () => {
   const { id } = useParams();
@@ -32,6 +33,11 @@ const Artigo: React.FC = () => {
 
   return (
     <article className="artigo-container">
+      <Helmet>
+      <title>{noticia.title} | Freguesia de Mirim</title>
+      <meta name="description" content={noticia.summary} />
+      
+    </Helmet>
       <header className="artigo-header">
         <Link to="/" className="back-link">
           ← Voltar para o início
