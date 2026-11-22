@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /termos
+
+Sitemap: https://scfreguesiademirim.web.app/sitemap.xml
